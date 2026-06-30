@@ -1,23 +1,24 @@
 import { Image, View } from 'react-native';
 
+import { APP_LOGO } from '../../../app/assets/images';
 import { AppText } from '../../../components/ui';
-import { ONBOARDING_HERO_IMAGE_URI } from '../constants/onboardingContent';
 
 export const OnboardingHero = () => {
   return (
-    <View className="items-center">
-      <AppText className="text-center text-5xl tracking-wide text-gold">
+    <View className="w-full items-center">
+      <AppText className="text-center text-[42px] font-bold tracking-wide text-goldSecondary">
         ChantFlow
       </AppText>
-      <AppText className="mt-2 text-center text-lg italic text-goldSecondary">
+      <AppText className="mt-1 text-center text-lg italic text-goldSecondary/90">
         Your sacred practice,
       </AppText>
 
-      <View className="mt-8 overflow-hidden rounded-full border border-premium shadow-premium">
+      <View className="mt-8 items-center justify-center">
         <Image
-          accessibilityLabel="Sacred symbol illustration"
-          className="h-56 w-56"
-          source={{ uri: ONBOARDING_HERO_IMAGE_URI }}
+          accessibilityLabel="ChantFlow logo"
+          className="h-60 w-60"
+          resizeMode="contain"
+          source={APP_LOGO}
         />
       </View>
     </View>

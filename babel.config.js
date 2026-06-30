@@ -1,5 +1,3 @@
 module.exports = {
-  presets: [
-    ['module:@react-native/babel-preset', { jsxImportSource: 'nativewind' }],
-  ],
+  presets: ['module:@react-native/babel-preset', 'nativewind/babel'],
 };

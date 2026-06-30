@@ -32,7 +32,7 @@ if ($longPathsEnabled -eq 1) {
 
 Write-Host ""
 Write-Host "Windows Android build (REQUIRED on Windows):" -ForegroundColor Cyan
-Write-Host "  pnpm android:win"
+Write-Host "  npm run android:win"
 Write-Host ""
 Write-Host "Why: React Native New Architecture C++ paths exceed 260 chars in"
 Write-Host "     C:\Users\...\Documents\GitHub\ChantFlow. The script maps R:\ and"
@@ -42,8 +42,8 @@ Write-Host "Manual steps:" -ForegroundColor Cyan
 Write-Host "  subst R: `"$projectRoot`""
 Write-Host "  `$env:GRADLE_USER_HOME = 'C:\gradle'"
 Write-Host "  cd R:\"
-Write-Host "  pnpm clean:android"
-Write-Host "  pnpm android"
+Write-Host "  npm run clean:android"
+Write-Host "  npm run android"
 Write-Host ""
 Write-Host "Metro (any path):" -ForegroundColor Cyan
-Write-Host "  pnpm start -- --reset-cache"
+Write-Host "  npm start -- --reset-cache"

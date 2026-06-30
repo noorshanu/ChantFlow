@@ -19,7 +19,10 @@ export const AppScreen = ({
   variant = 'gradient',
 }: AppScreenProps) => {
   const content = (
-    <View className={cx('flex-1 px-screenX pt-screenTop', contentClassName)}>
+    <View
+      className={cx('flex-1 px-screenX pt-screenTop', contentClassName)}
+      style={styles.content}
+    >
       {children}
     </View>
   );
@@ -37,6 +40,11 @@ export const AppScreen = ({
 };
 
 const styles = StyleSheet.create({
+  content: {
+    flex: 1,
+    paddingHorizontal: 24,
+    paddingTop: 32,
+  },
   screen: {
     backgroundColor: COLOR_TOKENS.background,
     flex: 1,

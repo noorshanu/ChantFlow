@@ -1,8 +1,10 @@
 import { type NativeStackScreenProps } from '@react-navigation/native-stack';
 import { ScrollView, StyleSheet, View } from 'react-native';
+import { SafeAreaView } from 'react-native-safe-area-context';
 
 import { type RootStackParamList } from '../../../app/navigation/routeTypes';
-import { AppButton, AppScreen } from '../../../components/ui';
+import { OnboardingBackground } from '../components/OnboardingBackground';
+import { OnboardingCtaButton } from '../components/OnboardingCtaButton';
 import { OnboardingFeatureList } from '../components/OnboardingFeatureList';
 import { OnboardingHero } from '../components/OnboardingHero';
 
@@ -13,25 +15,25 @@ type OnboardingScreenProps = NativeStackScreenProps<
 
 export const OnboardingScreen = ({ navigation }: OnboardingScreenProps) => {
   return (
-    <AppScreen contentClassName="pb-10">
-      <View style={styles.container}>
-        <ScrollView
-          contentContainerStyle={styles.scrollContent}
-          showsVerticalScrollIndicator={false}
-          style={styles.scroll}
-        >
-          <OnboardingHero />
-          <OnboardingFeatureList />
-        </ScrollView>
+    <OnboardingBackground>
+      <SafeAreaView edges={['top', 'bottom']} style={styles.safeArea}>
+        <View style={styles.container}>
+          <ScrollView
+            contentContainerStyle={styles.scrollContent}
+            showsVerticalScrollIndicator={false}
+            style={styles.scroll}
+          >
+            <OnboardingHero />
+            <OnboardingFeatureList />
+          </ScrollView>
 
-        <AppButton
-          accessibilityLabel="Begin your journey"
-          className="mt-4 shadow-premium"
-          label="Begin Your Journey"
-          onPress={() => navigation.navigate('Auth')}
-        />
-      </View>
-    </AppScreen>
+          <OnboardingCtaButton
+            label="Begin Your Journey"
+            onPress={() => navigation.navigate('Auth')}
+          />
+        </View>
+      </SafeAreaView>
+    </OnboardingBackground>
   );
 };
 
@@ -39,11 +41,19 @@ const styles = StyleSheet.create({
   container: {
     flex: 1,
     justifyContent: 'space-between',
+    paddingBottom: 8,
+    paddingHorizontal: 28,
+    paddingTop: 12,
+  },
+  safeArea: {
+    flex: 1,
   },
   scroll: {
     flex: 1,
   },
   scrollContent: {
-    paddingBottom: 16,
+    alignItems: 'center',
+    flexGrow: 1,
+    paddingBottom: 24,
   },
 });

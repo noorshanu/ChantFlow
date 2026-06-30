@@ -33,13 +33,12 @@ Set-Location $shortRoot
 
 Write-Host "Building from $shortRoot (GRADLE_USER_HOME=$gradleHome)..." -ForegroundColor Green
 
-node scripts/materialize-native-modules.js
-pnpm clean:android
-pnpm android
+npm run clean:android
+npm run android
 
 Write-Host ""
 Write-Host "Keep using these for Windows Android builds:" -ForegroundColor Cyan
 Write-Host "  cd R:\"
-Write-Host "  pnpm android"
+Write-Host "  npm run android"
 Write-Host ""
 Write-Host "Remove drive mapping later with: subst $driveLetter /d" -ForegroundColor DarkGray

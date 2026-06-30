@@ -3,19 +3,18 @@
   "version": "0.0.1",
   "private": true,
   "scripts": {
-    "android": "react-native run-android",
+    "android": "node scripts/run-android.js",
     "android:win": "powershell -ExecutionPolicy Bypass -File scripts/android-short-path.ps1",
     "ios": "react-native run-ios",
     "lint": "eslint .",
     "start": "react-native start",
     "test": "jest",
-    "clean:android": "node scripts/clean-android.js"
+    "clean:android": "node scripts/clean-android.js",
+    "generate:icons": "powershell -ExecutionPolicy Bypass -File scripts/generate-app-icons.ps1"
   },
   "dependencies": {
     "@hookform/resolvers": "^5.4.0",
     "@react-native/new-app-screen": "0.86.0",
-    "@react-navigation/core": "^7.21.2",
-    "@react-navigation/elements": "^2.9.26",
     "@react-navigation/native": "^7.3.4",
     "@react-navigation/native-stack": "^7.17.6",
     "nativewind": "^4.2.6",
@@ -27,8 +26,6 @@
     "react-native-safe-area-context": "^5.5.2",
     "react-native-screens": "^4.25.2",
     "react-native-svg": "^15.15.5",
-    "invariant": "^2.2.4",
-    "warn-once": "^0.1.1",
     "zod": "^3.24.2"
   },
   "devDependencies": {

@@ -1,8 +1,19 @@
 export const ONBOARDING_FEATURES = [
-  'Chant effortlessly, one tap at a time.',
-  'Let your practice flow quietly within.',
-  'Return in awareness, and watch your journey deepen.',
+  {
+    id: 'effortless',
+    icon: 'hands',
+    label: 'Chant effortlessly, one tap at a time.',
+  },
+  {
+    id: 'flow',
+    icon: 'heart',
+    label: 'Let your practice flow quietly within.',
+  },
+  {
+    id: 'awareness',
+    icon: 'star',
+    label: 'Return in awareness, and watch your journey deepen.',
+  },
 ] as const;
 
-export const ONBOARDING_HERO_IMAGE_URI =
-  'https://placehold.co/280x280/D6B25E/07111F?text=Sacred+Symbol';
+export type OnboardingFeatureIcon = (typeof ONBOARDING_FEATURES)[number]['icon'];
