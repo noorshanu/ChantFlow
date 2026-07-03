@@ -4,10 +4,10 @@ import {
 } from '@react-navigation/native-stack';
 
 import { AuthScreen } from '../../features/auth/screens/AuthScreen';
-import { HomeScreen } from '../../features/home/screens/HomeScreen';
 import { OnboardingScreen } from '../../features/onboarding/screens/OnboardingScreen';
 import { ReligionSelectionScreen } from '../../features/religion/screens/ReligionSelectionScreen';
 import { COLOR_TOKENS } from '../theme/tokens';
+import { MainTabNavigator } from './MainTabNavigator';
 import { type RootStackParamList } from './routeTypes';
 
 const Stack = createNativeStackNavigator<RootStackParamList>();
@@ -32,7 +32,7 @@ export const RootNavigator = () => {
         component={ReligionSelectionScreen}
         name="ReligionSelection"
       />
-      <Stack.Screen component={HomeScreen} name="Home" />
+      <Stack.Screen component={MainTabNavigator} name="Main" />
     </Stack.Navigator>
   );
 };

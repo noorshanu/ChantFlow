@@ -52,7 +52,7 @@ export const ReligionSelectionScreen = ({
         className="mt-4"
         disabled={!hasSelection}
         label="Continue"
-        onPress={() => navigation.replace('Home')}
+        onPress={() => navigation.replace('Main')}
       />
     </AppScreen>
   );
